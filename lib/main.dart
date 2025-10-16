@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:roqqu_assessment/features/home/presentation/views/home_page.dart';
+import 'package:roqqu_assessment/features/home/presentation/widgets/bottom_nav_bar.dart';
 
 void main() {
   runApp(
@@ -21,7 +23,8 @@ class MyApp extends ConsumerWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Davixx',
+          title: 'Roqqu Assessment',
+          home: const Main( ),
         );
       },
     );
