@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
 import 'package:roqqu_assessment/core/constants/assests.dart';
 import 'dart:math';
@@ -9,49 +10,50 @@ class CopyTradingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(20, 16, 0, 0),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(
-            image: AssetImage(Assets.copyTradingBg),
-            fit: BoxFit.fill,
-          ),
-        
-          
-        ),
-        child: Row(
-          children: [
-            SizedBox(
-              width: MediaQuery.sizeOf( context).width * 0.7,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Copy Trading',
-                    style: AppTheme.darkTheme.textTheme.titleMedium,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Discover our latest feature. Follow and watch the PRO traders closely and win like a PRO! We are rooting for you!',
-                    style: AppTheme.darkTheme.textTheme.bodySmall,
-                  ),
-                ],
-              ),
+    return GestureDetector(
+      onTap: () => context.push('/copyTrading'),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(20, 16, 0, 0),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image: DecorationImage(
+              image: AssetImage(Assets.copyTradingBg),
+              fit: BoxFit.fill,
             ),
-            SvgPicture.asset(
-            Assets.roqquNRollVictoryCrown,
-            width: 80,
-            height: 80,
+          
+            
           ),
-          ],
+          child: Row(
+            children: [
+              SizedBox(
+                width: MediaQuery.sizeOf( context).width * 0.7,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Copy Trading',
+                      style: AppTheme.darkTheme.textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Discover our latest feature. Follow and watch the PRO traders closely and win like a PRO! We are rooting for you!',
+                      style: AppTheme.darkTheme.textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+              SvgPicture.asset(
+              Assets.roqquNRollVictoryCrown,
+              width: 80,
+              height: 80,
+            ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-// background: linear-gradient(109.12deg, #ABE2F3 0.42%, #BDE4E5 39.7%, #EBE9D0 102.33%);

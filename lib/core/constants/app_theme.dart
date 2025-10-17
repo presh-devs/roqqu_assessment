@@ -11,6 +11,12 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: Color(0xFF1C2127),
+       appBarTheme: const AppBarTheme(
+        backgroundColor: Color(0xFF1C2127),
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.white),
+        centerTitle: true,
+      ),
       textTheme: TextTheme(
         // Maps to "Heading/Mobile/Medium"
         headlineMedium: encodeSansTextTheme.headlineMedium?.copyWith(
