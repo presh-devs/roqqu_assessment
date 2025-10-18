@@ -22,7 +22,10 @@ class Assets {
   static final String uAnalysis = 'assets/icons/u_analysis.svg';
   static final String uEye = 'assets/icons/u_eye.svg';
   static final String userTick = 'assets/icons/user_tick.svg';
+  static final String users = 'assets/icons/users.svg';
   static final String withdraw = 'assets/icons/withdraw.svg';
+  static final String newDashboardIcon = 'assets/icons/New Dashboard Icon 1.svg';
+  static final String newBecomeTraderIcon = 'assets/icons/New Become a trader icon 1.svg';
 
   // Illustrations
   static final String copyProTraders1 = 'assets/illustrations/copy_pro_traders_1.svg';
@@ -33,4 +36,5 @@ class Assets {
 
   // Images
   static final String copyTradingBg = 'assets/images/Rectangle 10.png';
+  static final String pinCode = 'assets/images/Pin Code Lock 1.png';
 }
