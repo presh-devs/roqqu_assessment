@@ -5,8 +5,8 @@ import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/char
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/pair_chip.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/statistics_card.dart';
 
-class StatisticsScreen extends ConsumerWidget {
-  const StatisticsScreen({super.key});
+class StatisticsTab extends ConsumerWidget {
+  const StatisticsTab({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -1,4 +1,4 @@
-class TraderModel {
+class CopierModel {
   final String id;
   final String name;
   final String avatar;
@@ -8,7 +8,7 @@ class TraderModel {
   final int followers;
   
 
-  TraderModel({
+  CopierModel({
     required this.id,
     required this.name,
     required this.avatar,
@@ -18,7 +18,7 @@ class TraderModel {
     this.followers = 0,
   });
 
-  TraderModel copyWith({
+  CopierModel copyWith({
     String? id,
     String? name,
     String? avatar,
@@ -27,7 +27,7 @@ class TraderModel {
     bool? isVerified,
     int? followers,
   }) {
-    return TraderModel(
+    return CopierModel(
       id: id ?? this.id,
       name: name ?? this.name,
       avatar: avatar ?? this.avatar,
@@ -50,8 +50,8 @@ class TraderModel {
     };
   }
 
-  factory TraderModel.fromJson(Map<String, dynamic> json) {
-    return TraderModel(
+  factory CopierModel.fromJson(Map<String, dynamic> json) {
+    return CopierModel(
       id: json['id'] as String,
       name: json['name'] as String,
       avatar: json['avatar'] as String,

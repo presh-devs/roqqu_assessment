@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 
 class RoqquVerificationBadge extends StatelessWidget {
   const RoqquVerificationBadge({super.key});

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/all_trades.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/copiers.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_statistics_tab.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/important_message_sheet.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trading_badges.dart';
@@ -154,9 +157,9 @@ class _TradingDetailsScreenState extends State<TradingDetailsScreen> {
                   child: TabBarView(
                     children: [
                       TradingDetailsChartTab(),
-                      Center(child: Text('Stats')),
-                      Center(child: Text('All Trades')),
-                      Center(child: Text('Copiers')),
+                      StatisticsTab(),
+                   AllTradesTab(),
+                    CopiersTab(),
                     ],
                   ),
                 ),

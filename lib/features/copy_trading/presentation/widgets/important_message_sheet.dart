@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/risks_bottom_sheet.dart';
 
 class ImportantMessageSheet extends StatefulWidget {

@@ -10,7 +10,7 @@ import 'package:roqqu_assessment/features/copy_trading/presentation/views/enter_
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/pin_confirmation_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/success_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/trading_details.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_dashboard_page.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_dashboard_page.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/bottom_nav_bar.dart';
 
 class AppRouter {

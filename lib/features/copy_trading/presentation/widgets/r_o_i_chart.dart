@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/chart_header.dart';

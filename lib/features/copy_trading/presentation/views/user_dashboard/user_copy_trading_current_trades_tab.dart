@@ -8,7 +8,7 @@ class UserCopyTradingCurrentTradesTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trades = ref.watch(tradeListProvider);
+    final trades = ref.watch(userTradeListProvider);
 
     return SafeArea(
       child: Column(

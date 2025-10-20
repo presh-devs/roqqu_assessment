@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 
 class EnterAmountScreen extends StatefulWidget {

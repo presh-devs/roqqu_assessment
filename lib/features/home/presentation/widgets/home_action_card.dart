@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/home_action_item.dart';
 
 class HomeActionCard extends StatelessWidget {

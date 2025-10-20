@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class StayUpdatedSection extends StatefulWidget {
@@ -58,58 +58,73 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
   }
 
   Widget _buildUpdateCard() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Color(0xFF20252B),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFF262932)),
-      ),
-      child: Row(
-        children: [
-           CircleAvatar(
-            backgroundColor:Color(0xFF20252B),
-            child: SvgPicture.asset(Assets.notificationIconWithAlert),
-          ),
-          const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+      
+        decoration: BoxDecoration(
+          color: Color(0xFF20252B),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0xFF262932)),
+        ),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF04438).withOpacity(0.14),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(8),
+                    bottomLeft: Radius.circular(8),
+                  ),
+         
+                ),
+                child: const Text(
+                  'Urgent Notice',
+                  style: TextStyle(color: Color(0xFFF04438), fontSize: 10),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Center(
+              child: Row(
                 children: [
-                  Text(
-                    'Delisting coins',
-                    style: AppTheme.darkTheme.textTheme.labelLarge,
+                  CircleAvatar(
+                    backgroundColor: Color(0xFF20252B),
+                    child: SvgPicture.asset(Assets.notificationIconWithAlert),
                   ),
-                  const SizedBox(width: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 2,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.red.shade100,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: const Text(
-                      'Urgent Notice',
-                      style: TextStyle(color: Colors.red, fontSize: 10),
-                    ),
+                  const SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Delisting coins',
+                            style: AppTheme.darkTheme.textTheme.labelLarge?.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                        ],
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'View the list of coins we are delisting',
+                        style: AppTheme.darkTheme.textTheme.bodySmall,
+                      ),
+                    ],
                   ),
+         
                 ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                'View the list of coins we are delisting',
-                style: AppTheme.darkTheme.textTheme.bodySmall,
-              ),
-            ],
-          ),
-          const Spacer(),
-          const Icon(Icons.chevron_right, color: Colors.grey),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

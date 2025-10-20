@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
 
 class CopyTradingDashboardCard extends StatelessWidget {
   const CopyTradingDashboardCard({super.key,    

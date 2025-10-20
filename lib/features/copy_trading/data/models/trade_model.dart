@@ -9,6 +9,9 @@ class TradeModel {
   final DateTime entryTime;
   final bool isActive;
   final double amount;
+  final int? copiers;
+  final double? copiersAmount;
+  final DateTime? exitTime;
 
   TradeModel({
     required this.id,
@@ -21,6 +24,9 @@ class TradeModel {
     required this.entryTime,
     required this.isActive,
     required this.amount,
+    this.copiers,
+    this.copiersAmount,
+    this.exitTime,
   });
 
   TradeModel copyWith({

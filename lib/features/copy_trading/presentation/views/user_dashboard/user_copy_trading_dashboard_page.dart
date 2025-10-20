@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_chart_tab.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_my_traders_tab.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_current_trades_tab.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_statistics_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_chart_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_my_traders_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_current_trades_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_statistics_tab.dart';
 
 class UserCopyTradingDashboardPage extends StatefulWidget {
   const UserCopyTradingDashboardPage({super.key});
@@ -161,7 +161,7 @@ class _UserCopyTradingDashboardPageState
                             children: [
                               UserCopyTradingChartTab(),
                               UserCopyTradingCurrentTradesTab(),
-                              StatisticsScreen(),
+                              StatisticsTab(),
                               UserCopyTradingMyTradersTab(),
                             ],
                           ),
