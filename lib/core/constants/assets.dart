@@ -28,6 +28,7 @@ class Assets {
   static final String newBecomeTraderIcon = 'assets/icons/New Become a trader icon 1.svg';
   static final String usFlag = 'assets/icons/US.svg';
   static final String notificationIconWithAlert = 'assets/icons/notification_with_bg.svg';
+  static final String upTrendIcon = 'assets/icons/trending-down.svg';
 
   // Illustrations
   static final String copyProTraders1 = 'assets/illustrations/copy_pro_traders_1.svg';

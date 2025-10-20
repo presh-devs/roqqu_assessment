@@ -6,21 +6,21 @@ class StatisticsCardWidget extends StatelessWidget {
   final bool isRed;
 
   const StatisticsCardWidget({
-    Key? key,
+    super.key,
     required this.label,
     required this.value,
     this.isRed = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E3A5F),
-        borderRadius: BorderRadius.circular(12),
+        color: const Color(0xFF20252B),
+        border: Border.all(color: const Color(0xFF262932)),
       ),
+
       child: Row(
         children: [
           Container(
@@ -28,6 +28,9 @@ class StatisticsCardWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.orange,
               borderRadius: BorderRadius.circular(8),
+              border: Border(
+                bottom: BorderSide(color: Color(0xFF262932), width: 1),
+              ),
             ),
             child: const Icon(Icons.bar_chart, color: Colors.white, size: 20),
           ),

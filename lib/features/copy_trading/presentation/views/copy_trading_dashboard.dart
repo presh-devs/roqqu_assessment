@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/copy_trading_dashboard_card.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/pro_trader_card.dart';
@@ -51,7 +51,7 @@ class CopyTradingDashboard extends ConsumerWidget {
               'PRO Traders',
               style: Theme.of(
                 context,
-              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
             const SizedBox(height: 16),
             Expanded(
