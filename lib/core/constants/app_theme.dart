@@ -11,11 +11,19 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: Color(0xFF1C2127),
-       appBarTheme: const AppBarTheme(
+       appBarTheme:  AppBarTheme(
         backgroundColor: Color(0xFF1C2127),
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
+        foregroundColor: Colors.white,
+        titleTextStyle: GoogleFonts.interTextTheme().titleMedium?.copyWith(
+          color: Colors.white,
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          height: 24 / 16,
+          letterSpacing: 0,
+        ),
       ),
       textTheme: TextTheme(
         // Maps to "Heading/Mobile/Medium"
@@ -80,7 +88,7 @@ class AppTheme {
           fontWeight: FontWeight.w400, 
           height: 18 / 12, 
           letterSpacing: 0,
-        ),
+        ).apply(color: Colors.white)
       )
     );
   }

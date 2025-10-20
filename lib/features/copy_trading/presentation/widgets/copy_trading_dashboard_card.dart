@@ -4,15 +4,16 @@ import 'package:roqqu_assessment/core/constants/app_theme.dart';
 import 'package:roqqu_assessment/core/constants/assests.dart';
 
 class CopyTradingDashboardCard extends StatelessWidget {
-  const CopyTradingDashboardCard({super.key, 
+  const CopyTradingDashboardCard({super.key,    
     required this.gradientColors,
     required this.title,
-    required this.description, required this.onTap,
+    required this.description, required this.onTap, required this.assetPath,
   });
 
   final List<Color> gradientColors;
   final String title, description;
   final VoidCallback onTap;
+  final String assetPath ;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,14 @@ class CopyTradingDashboardCard extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0x33000000), 
+                  color: Color(0xFF2A2F36),
                 ),
-                child: SvgPicture.asset(Assets.uAnalysis), 
+                child: SvgPicture.asset(
+                  assetPath,
+                  width: 24,
+                  height: 24,
+                  colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                ),
               ),
               const SizedBox(height: 16),
               Text(

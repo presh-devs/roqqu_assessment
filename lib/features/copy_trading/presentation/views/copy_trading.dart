@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assests.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_onboarding_page.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
 
 class CopyTradingScreen extends ConsumerStatefulWidget {
   const CopyTradingScreen({super.key});
@@ -54,9 +55,13 @@ class _CopyTradingScreenState extends ConsumerState<CopyTradingScreen> {
       appBar: AppBar(
         title: Text(
           'Copy trading',
-          style: Theme.of(context).textTheme.titleMedium,
+      
         ),
       ),
+        bottomNavigationBar: BottomBar(
+          label: 'Get Started',
+          onPressed: () => context.push('/copy-trading-engagement'),
+        ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
@@ -106,16 +111,9 @@ class _CopyTradingScreenState extends ConsumerState<CopyTradingScreen> {
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     decoration: TextDecoration.none,
                     color: Color(0xFF85D1F0),
-                  
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              AppButton(  
-                label: 'Get Started',
-                onPressed: () => context.push('/copy-trading-engagement'),
-              ),
-              const SizedBox(height: 20),
             ],
           ),
         ),

@@ -33,6 +33,7 @@ class Assets {
   static final String importantMessage1 = 'assets/illustrations/important_message_1.svg';
   static final String roqquNRollVictoryCrown = 'assets/illustrations/roqqu_n_roll_victory_crown.svg';
   static final String success1 = 'assets/illustrations/success_1.svg';
+  static final String verifiedBadge = 'assets/illustrations/verified.svg';
 
   // Images
   static final String copyTradingBg = 'assets/images/Rectangle 10.png';

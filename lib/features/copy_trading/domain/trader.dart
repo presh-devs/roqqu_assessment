@@ -8,7 +8,10 @@ class ProTrader {
   final String totalPnl;
   final String winRate;
   final String aum;
-  final List<double> chartData; 
+  final String daysTraded;
+  final String percentangeProfit;
+  final String totalTrades;
+  final List<double> chartData;
 
   const ProTrader({
     required this.name,
@@ -19,6 +22,9 @@ class ProTrader {
     required this.winRate,
     required this.aum,
     required this.chartData,
+    required this.daysTraded,
+    required this.percentangeProfit,
+    required this.totalTrades,
   });
 }
 
@@ -31,6 +37,9 @@ final List<ProTrader> proTraders = [
     totalPnl: '\$38,667.29',
     winRate: '100%',
     aum: '38,667.29',
+    daysTraded: '43',
+    percentangeProfit: '15%',
+    totalTrades: '56',
     chartData: [0.5, 0.6, 0.4, 0.8, 0.7, 0.9, 0.6],
   ),
   const ProTrader(
@@ -41,6 +50,9 @@ final List<ProTrader> proTraders = [
     totalPnl: '\$38,667.29',
     winRate: '100%',
     aum: '38,667.29',
+    daysTraded: '43',
+    percentangeProfit: '15%',
+    totalTrades: '56',
     chartData: [0.5, 0.6, 0.4, 0.8, 0.7, 0.9, 0.6],
   ),
   const ProTrader(
@@ -51,6 +63,9 @@ final List<ProTrader> proTraders = [
     totalPnl: '\$38,667.29',
     winRate: '100%',
     aum: '38,667.29',
+    daysTraded: '43',
+    percentangeProfit: '15%',
+    totalTrades: '56',
     chartData: [0.5, 0.6, 0.4, 0.8, 0.7, 0.9, 0.6],
   ),
 ];

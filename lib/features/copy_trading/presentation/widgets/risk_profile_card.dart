@@ -6,7 +6,8 @@ class RiskProfileCard extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
 
-  const RiskProfileCard({super.key, 
+  const RiskProfileCard({
+    super.key,
     required this.title,
     required this.description,
     required this.isSelected,
@@ -20,7 +21,7 @@ class RiskProfileCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF262932),
+          color: const Color(0xFF1C2127),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isSelected
@@ -36,14 +37,19 @@ class RiskProfileCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: Theme.of(context).textTheme.titleMedium),
+                  Text(
+                    title,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleMedium?.copyWith(color: Colors.white),
+                  ),
                   const SizedBox(height: 8),
                   Text(
                     description,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: const Color(0xFFA7B1BC), height: 1.5),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: const Color(0xFFA7B1BC),
+                      height: 1.5,
+                    ),
                   ),
                 ],
               ),

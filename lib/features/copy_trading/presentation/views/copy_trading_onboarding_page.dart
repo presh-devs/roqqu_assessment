@@ -24,7 +24,7 @@ class CopyTradingOnboardingPage extends StatelessWidget {
           textAlign: TextAlign.left,
           style: Theme.of(
             context,
-          ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+          ).textTheme.headlineMedium?.copyWith(color: Colors.white),
         ),
         SizedBox(height: 8),
         Text(

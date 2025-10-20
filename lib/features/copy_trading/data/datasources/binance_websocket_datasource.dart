@@ -8,7 +8,7 @@ class BinanceWebSocketDataSource {
   final _tickerController = StreamController<TickerModel>.broadcast();
   final Set<String> _subscribedSymbols = {};
 
-  static const String _baseUrl = 'wss://stream.binance.com:9443/ws';
+  static const String _baseUrl = 'wss://ws-fapi.binance.com/ws-fapi/v1';
 
   Stream<TickerModel> get tickerStream => _tickerController.stream;
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_dashboard.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_engagement.dart';
@@ -42,7 +43,8 @@ class AppRouter {
           path: '/trading-details',
           name: 'tradingDetails',
           builder: (context, state) {
-            return const TradingDetailsScreen();
+            final ProTrader trader = state.extra as ProTrader;
+            return TradingDetailsScreen(trader: trader);
           },
         ),
         GoRoute(

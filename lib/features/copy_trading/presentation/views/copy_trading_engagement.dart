@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod/legacy.dart';
-import 'package:roqqu_assessment/core/widgets/app_button.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/risk_profile_card.dart';
 
 final selectedRiskProfileProvider = StateProvider<int?>((ref) => null);
@@ -33,12 +33,10 @@ class CopyTradingEngagementScreen extends ConsumerWidget {
     final selectedProfile = ref.watch(selectedRiskProfileProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Copy trading',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        centerTitle: true,
+      appBar: AppBar(title: Text('Copy trading'), centerTitle: true),
+      bottomNavigationBar: BottomBar(
+        label: 'Proceed',
+        onPressed: () => context.push('/copy-trading-dashboard'),
       ),
       body: SafeArea(
         child: Padding(
@@ -48,9 +46,9 @@ class CopyTradingEngagementScreen extends ConsumerWidget {
             children: [
               Text(
                 'What risk level are you comfortable exploring?',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.headlineMedium?.copyWith(color: Colors.white),
               ),
               const SizedBox(height: 8),
               Text(
@@ -78,11 +76,6 @@ class CopyTradingEngagementScreen extends ConsumerWidget {
                     );
                   },
                 ),
-              ),
-              const SizedBox(height: 24),
-              AppButton(
-                label: 'Proceed',
-                onPressed: () => context.push('/copy-trading-dashboard'),
               ),
             ],
           ),
