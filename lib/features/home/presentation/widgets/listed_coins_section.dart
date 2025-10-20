@@ -15,7 +15,10 @@ class ListedCoinsSection extends StatelessWidget {
             children: [
               Text(
                 'Listed Coins',
-                style: AppTheme.darkTheme.textTheme.titleMedium,
+                  style: AppTheme.darkTheme.textTheme.titleMedium?.copyWith(
+              color: Color(0xFFA7B1BC),
+              fontWeight: FontWeight.bold,
+            ),
               ),
               TextButton(
                 onPressed: () {},

@@ -15,41 +15,39 @@ class CopyTradingCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
+          height: 112,
           padding: const EdgeInsets.fromLTRB(20, 16, 0, 0),
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
-              image: AssetImage(Assets.copyTradingBg),
+              image: AssetImage(Assets.copyTradeBg1),
               fit: BoxFit.fill,
             ),
-          
-            
           ),
           child: Row(
             children: [
               SizedBox(
-                width: MediaQuery.sizeOf( context).width * 0.7,
+                width: MediaQuery.sizeOf(context).width * 0.6,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Copy Trading',
-                      style: AppTheme.darkTheme.textTheme.titleMedium,
+                      style: AppTheme.darkTheme.textTheme.titleMedium?.copyWith(color: Colors.black),
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Discover our latest feature. Follow and watch the PRO traders closely and win like a PRO! We are rooting for you!',
-                      style: AppTheme.darkTheme.textTheme.bodySmall,
+                      'Discover our latest feature. Follow and watch the PRO traders closely and win like a PRO!',
+                      style: AppTheme.darkTheme.textTheme.bodySmall?.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      'We are rooting for you!',
+                      style: AppTheme.darkTheme.textTheme.bodySmall?.copyWith(color: Colors.black),
                     ),
                   ],
                 ),
               ),
-              SvgPicture.asset(
-              Assets.roqquNRollVictoryCrown,
-              width: 80,
-              height: 80,
-            ),
             ],
           ),
         ),

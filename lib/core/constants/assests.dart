@@ -26,6 +26,8 @@ class Assets {
   static final String withdraw = 'assets/icons/withdraw.svg';
   static final String newDashboardIcon = 'assets/icons/New Dashboard Icon 1.svg';
   static final String newBecomeTraderIcon = 'assets/icons/New Become a trader icon 1.svg';
+  static final String usFlag = 'assets/icons/US.svg';
+  static final String notificationIconWithAlert = 'assets/icons/notification_with_bg.svg';
 
   // Illustrations
   static final String copyProTraders1 = 'assets/illustrations/copy_pro_traders_1.svg';
@@ -34,6 +36,9 @@ class Assets {
   static final String roqquNRollVictoryCrown = 'assets/illustrations/roqqu_n_roll_victory_crown.svg';
   static final String success1 = 'assets/illustrations/success_1.svg';
   static final String verifiedBadge = 'assets/illustrations/verified.svg';
+  static final String copyTradeBg = 'assets/illustrations/Premium Card.svg';
+  static final String copyTradeBg1 = 'assets/illustrations/Premium Card.jpg';
+
 
   // Images
   static final String copyTradingBg = 'assets/images/Rectangle 10.png';

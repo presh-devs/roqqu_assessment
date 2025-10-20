@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class ChartScreen extends StatelessWidget {
-  const ChartScreen({super.key});
+class UserCopyTradingChartTab extends StatelessWidget {
+  const UserCopyTradingChartTab({super.key});
 
   @override
   Widget build(BuildContext context) {

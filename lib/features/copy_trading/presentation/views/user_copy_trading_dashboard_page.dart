@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/chart_screen.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/my_traders_screen.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/current_trades_screen.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/statistics_screen.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_chart_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_my_traders_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_current_trades_tab.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_statistics_tab.dart';
 
-class UserCopyTradingPage extends StatefulWidget {
-  const UserCopyTradingPage({super.key});
+class UserCopyTradingDashboardPage extends StatefulWidget {
+  const UserCopyTradingDashboardPage({super.key});
 
   @override
-  State<UserCopyTradingPage> createState() => _UserCopyTradingPageState();
+  State<UserCopyTradingDashboardPage> createState() => _UserCopyTradingDashboardPageState();
 }
 
-class _UserCopyTradingPageState extends State<UserCopyTradingPage> {
+class _UserCopyTradingDashboardPageState extends State<UserCopyTradingDashboardPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    const ChartScreen(),
-    const CurrentTradesScreen(),
+    const UserCopyTradingChartTab(),
+    const UserCopyTradingCurrentTradesTab(),
     const StatisticsScreen(),
-    const MyTradersScreen(),
+    const UserCopyTradingMyTradersTab(),
   ];
 
   @override

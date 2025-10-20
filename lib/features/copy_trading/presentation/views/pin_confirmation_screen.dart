@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assests.dart';
 
 class PinConfirmationScreen extends StatefulWidget {
@@ -19,10 +21,7 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
       });
 
       if (_pin.length == _pinLength) {
-        // PIN complete - process transaction
-        Future.delayed(const Duration(milliseconds: 500), () {
-          _showSuccessDialog();
-        });
+        context.push('/transaction-success');
       }
     }
   }
@@ -35,99 +34,13 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
     }
   }
 
-  void _showSuccessDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF2D3250),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              decoration: const BoxDecoration(
-                color: Colors.green,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.check,
-                color: Colors.white,
-                size: 50,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Transaction Successful!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              'Your copy trade has been initiated',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 14,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF6C5CE7), Color(0xFFE91E63)],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).popUntil((route) => route.isFirst);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                shadowColor: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: const Text(
-                'Done',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1D2E),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF1A1D2E),
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+      appBar: AppBar(title: const Text('PIN Confirmation')),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 20),
           Image.asset(Assets.pinCode, width: 100, height: 100),
           const SizedBox(height: 24),
           const Text(
@@ -144,42 +57,65 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
             child: Text(
               'Input your 6 digit transaction PIN to confirm your transaction and authenticate your request',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 14,
-                height: 1.5,
-              ),
+              style: TextStyle(color: Colors.grey, fontSize: 14, height: 1.5),
             ),
           ),
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(_pinLength, (index) {
-              return Container(
-                margin: const EdgeInsets.symmetric(horizontal: 6),
-                child: _buildPinDot(index < _pin.length),
-              );
-            }),
+            spacing: 16,
+            children: [
+              Container(
+                height: 40,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: const Color(0xFF20252B),
+                  border: Border.all(color: Color(0xFF262932)),
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(_pinLength, (index) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      child: _buildPinDot(index < _pin.length),
+                    );
+                  }),
+                ),
+              ),
+
+              Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: const Color(0xFF20252B),
+                  border: Border.all(color: Color(0xFF262932)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SvgPicture.asset(
+                  Assets.biometrics,
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 20),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.fingerprint,
-              color: Colors.white,
-              size: 40,
-            ),
-          ),
+
           const Spacer(),
           _buildNumPad(),
           const SizedBox(height: 20),
           TextButton(
             onPressed: () {},
-            child: const Text(
+            child: Text(
               'Forgot PIN?',
-              style: TextStyle(
-                color: Color(0xFF6C5CE7),
-                fontSize: 14,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Color(0xFF85D1F0),
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -196,21 +132,19 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: filled ? Colors.white : Colors.transparent,
-        border: Border.all(
-          color: Colors.white.withOpacity(0.3),
-          width: 2,
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.3), width: 2),
       ),
     );
   }
 
   Widget _buildNumPad() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            spacing: 24,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildNumButton('1'),
               _buildNumButton('2'),
@@ -219,7 +153,8 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
           ),
           const SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            spacing: 16,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildNumButton('4'),
               _buildNumButton('5'),
@@ -228,7 +163,8 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
           ),
           const SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            spacing: 24,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildNumButton('7'),
               _buildNumButton('8'),
@@ -237,9 +173,10 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
           ),
           const SizedBox(height: 20),
           Row(
+            spacing: 24,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const SizedBox(width: 70),
+              _buildNumButton('.'),
               _buildNumButton('0'),
               _buildBackspaceButton(),
             ],
@@ -255,15 +192,13 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
       child: Container(
         width: 70,
         height: 70,
-        decoration: const BoxDecoration(
-          color: Colors.transparent,
-        ),
+        decoration: const BoxDecoration(color: Colors.transparent),
         child: Center(
           child: Text(
             number,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 32,
+              fontSize: 24,
               fontWeight: FontWeight.w300,
             ),
           ),
@@ -278,15 +213,9 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
       child: Container(
         width: 70,
         height: 70,
-        decoration: const BoxDecoration(
-          color: Colors.transparent,
-        ),
+        decoration: const BoxDecoration(color: Colors.transparent),
         child: const Center(
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-            size: 28,
-          ),
+          child: Icon(Icons.arrow_back, color: Colors.white, size: 28),
         ),
       ),
     );

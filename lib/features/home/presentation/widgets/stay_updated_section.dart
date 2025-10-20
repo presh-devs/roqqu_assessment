@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
+import 'package:roqqu_assessment/core/constants/assests.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class StayUpdatedSection extends StatefulWidget {
@@ -8,6 +10,7 @@ class StayUpdatedSection extends StatefulWidget {
   @override
   State<StayUpdatedSection> createState() => _StayUpdatedSectionState();
 }
+
 class _StayUpdatedSectionState extends State<StayUpdatedSection> {
   final PageController _pageController = PageController();
 
@@ -20,7 +23,10 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
             'Stay Updated',
-            style: AppTheme.darkTheme.textTheme.titleMedium,
+            style: AppTheme.darkTheme.textTheme.titleMedium?.copyWith(
+              color: Color(0xFFA7B1BC),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         const SizedBox(height: 16),
@@ -28,7 +34,7 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
           height: 100,
           child: PageView.builder(
             controller: _pageController,
-            itemCount: 3, // Example count
+            itemCount: 3,
             itemBuilder: (context, index) {
               return _buildUpdateCard();
             },
@@ -56,22 +62,15 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
       margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        color: Color(0xFF20252B),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: const Color(0xFF262932)),
       ),
       child: Row(
         children: [
-          const CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 255, 230, 228),
-            child: Icon(Icons.notifications_active, color: Colors.red),
+           CircleAvatar(
+            backgroundColor:Color(0xFF20252B),
+            child: SvgPicture.asset(Assets.notificationIconWithAlert),
           ),
           const SizedBox(width: 12),
           Column(

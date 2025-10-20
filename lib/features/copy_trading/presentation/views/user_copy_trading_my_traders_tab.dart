@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/statistics.dart';
-import 'package:roqqu_assessment/features/copy_trading/data/models/trade_model.dart';
+import 'package:roqqu_assessment/features/copy_trading/data/models/trader_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_card.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trader_card.dart';
 
-class CurrentTradesScreen extends ConsumerWidget {
-  const CurrentTradesScreen({super.key});
+class UserCopyTradingMyTradersTab extends ConsumerWidget {
+  const UserCopyTradingMyTradersTab({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trades = ref.watch(tradeListProvider);
     final statistics = ref.watch(statisticsProvider);
+    final traders = ref.watch(filteredTradersProvider);
 
     return SafeArea(
       child: Column(
@@ -23,7 +23,9 @@ class CurrentTradesScreen extends ConsumerWidget {
                 children: [
                   _buildStatsCards(statistics),
                   const SizedBox(height: 20),
-                  _buildTradesList(trades),
+                  _buildSearchBar(ref),
+                  const SizedBox(height: 16),
+                  _buildTradersList(traders),
                 ],
               ),
             ),
@@ -141,14 +143,36 @@ class CurrentTradesScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildTradesList(List<TradeModel> trades) {
+  Widget _buildSearchBar(WidgetRef ref) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: TextField(
+        onChanged: (value) {
+          ref.read(searchQueryProvider.notifier).state = value;
+        },
+        decoration: InputDecoration(
+          hintText: 'Search for PRO traders',
+          hintStyle: const TextStyle(color: Colors.grey),
+          prefixIcon: const Icon(Icons.search, color: Colors.grey),
+          filled: true,
+          fillColor: const Color(0xFF1E3A5F),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTradersList(List<TraderModel> traders) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          ...trades.map((trade) => Padding(
+          ...traders.map((trader) => Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: TradeCardWidget(trade: trade),
+                child: TraderCardWidget(trader: trader),
               )),
           const SizedBox(height: 20),
         ],

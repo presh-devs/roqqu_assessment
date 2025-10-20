@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/confirm_transaction_screen.dart';
-
+import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:roqqu_assessment/core/constants/assests.dart';
+import 'package:roqqu_assessment/core/widgets/app_button.dart';
 
 class EnterAmountScreen extends StatefulWidget {
   const EnterAmountScreen({super.key});
@@ -14,7 +16,9 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
   final double _balance = 240.73;
   final double _transactionFeePercent = 1.0;
 
-  double get _transactionFee => double.parse(_amount.isEmpty ? '0' : _amount) * (_transactionFeePercent / 100);
+  double get _transactionFee =>
+      double.parse(_amount.isEmpty ? '0' : _amount) *
+      (_transactionFeePercent / 100);
 
   void _onNumberPress(String value) {
     setState(() {
@@ -51,199 +55,176 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1D2E),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF1A1D2E),
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text(
-          'Enter amount',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Enter amount'),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: const Color(0xFF2D3250),
-              borderRadius: BorderRadius.circular(8),
+              color: const Color(0xFF20252B),
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(color: const Color(0xFF262932)),
             ),
             child: Row(
               children: [
-                Container(
-                  width: 20,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.blue,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      '🇺🇸',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ),
+                SvgPicture.asset(Assets.usFlag, height: 16, width: 16),
                 const SizedBox(width: 6),
                 const Text(
                   'USD',
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
                 const SizedBox(width: 4),
-                const Icon(Icons.arrow_drop_down, color: Colors.white, size: 20),
+                Transform.rotate(
+                  angle: 3.14 / 2,
+                  child: const Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
               ],
             ),
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 40),
-          Text(
-            '$_amount USD',
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            const SizedBox(height: 40),
+            Text(
+              '$_amount USD',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+                fontWeight: FontWeight.w900,
+                fontFamily: 'Nexa-Heavy',
+                height: 56/40
+              ),
             ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            'Transaction fee ($_transactionFeePercent%) - ${_transactionFee.toStringAsFixed(2)}USD',
-            style: const TextStyle(
-              color: Colors.grey,
-              fontSize: 14,
+            const SizedBox(height: 16),
+            Text(
+              'Transaction fee ($_transactionFeePercent%) - ${_transactionFee.toStringAsFixed(2)}USD',
+              style: const TextStyle(color: Colors.grey, fontSize: 14),
             ),
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'USD Balance',
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
-                    ),
-                    Text(
-                      '\$${_balance.toStringAsFixed(2)}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+            const Spacer(),
+            Container(
+              padding: const EdgeInsets.only(
+                top: 4,
+                bottom: 4,
+                left: 16,
+                right: 16,
+              ),
+              decoration: BoxDecoration(
+                color: const Color(0xFF20252B),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: const Color(0xFF262932)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'USD Balance',
+                        style: TextStyle(color: Colors.grey, fontSize: 12),
+                      ),
+                      Text(
+                        '\$${_balance.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: _useMax,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF2A2F36),
+                      padding: const EdgeInsets.only(
+                        top: 3,
+                        right: 10,
+                        bottom: 3,
+                        left: 10,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                  ],
-                ),
-                TextButton(
-                  onPressed: _useMax,
-                  child: const Text(
-                    'Use Max',
-                    style: TextStyle(
-                      color: Color(0xFF6C5CE7),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                    child: Text(
+                      'Use Max',
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF6C5CE7), Color(0xFFE91E63)],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ConfirmTransactionScreen(amount: _amount),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                  minimumSize: const Size(double.infinity, 54),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Continue',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+                ],
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          _buildNumPad(),
-          const SizedBox(height: 20),
-        ],
+            const SizedBox(height: 20),
+            AppButton(
+              label: 'Continue',
+              onPressed: () {
+             context.push('/confirm-transaction', extra: _amount);
+              },
+            ),
+            const SizedBox(height: 20),
+            _buildNumPad(),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildNumPad() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
+        spacing: 6,
         children: [
           Row(
+            spacing: 6,
             children: [
-              _buildNumButton('1', 'ABC'),
-              const SizedBox(width: 8),
+              _buildNumButton('1', ''),
+
               _buildNumButton('2', 'ABC'),
-              const SizedBox(width: 8),
+
               _buildNumButton('3', 'DEF'),
             ],
           ),
-          const SizedBox(height: 8),
+
           Row(
+            spacing: 6,
             children: [
               _buildNumButton('4', 'GHI'),
-              const SizedBox(width: 8),
+
               _buildNumButton('5', 'JKL'),
-              const SizedBox(width: 8),
+
               _buildNumButton('6', 'MNO'),
             ],
           ),
-          const SizedBox(height: 8),
+
           Row(
+            spacing: 6,
             children: [
               _buildNumButton('7', 'PQRS'),
-              const SizedBox(width: 8),
+
               _buildNumButton('8', 'TUV'),
-              const SizedBox(width: 8),
+
               _buildNumButton('9', 'WXYZ'),
             ],
           ),
-          const SizedBox(height: 8),
+
           Row(
+            spacing: 6,
             children: [
               const Expanded(child: SizedBox()),
-              const SizedBox(width: 8),
+
               _buildNumButton('0', ''),
-              const SizedBox(width: 8),
+
               _buildBackspaceButton(),
             ],
           ),
@@ -259,8 +240,8 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
         child: Container(
           height: 60,
           decoration: BoxDecoration(
-            color: const Color(0xFF3D4159),
-            borderRadius: BorderRadius.circular(12),
+            color: const Color(0xFF434343),
+            borderRadius: BorderRadius.circular(5),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -276,10 +257,7 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
               if (letters.isNotEmpty)
                 Text(
                   letters,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
-                  ),
+                  style: const TextStyle(color: Colors.grey, fontSize: 10),
                 ),
             ],
           ),
@@ -292,17 +270,10 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
     return Expanded(
       child: GestureDetector(
         onTap: _onBackspace,
-        child: Container(
-          height: 60,
-          decoration: BoxDecoration(
-            color: const Color(0xFF3D4159),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: const Icon(
-            Icons.backspace_outlined,
-            color: Colors.white,
-            size: 24,
-          ),
+        child: const Icon(
+          Icons.backspace_outlined,
+          color: Colors.white,
+          size: 24,
         ),
       ),
     );

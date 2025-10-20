@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/confirm_transaction_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_dashboard.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_engagement.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/enter_amount_screen.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/pin_confirmation_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/success_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/trading_details.dart';
-import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_page.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_dashboard_page.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/bottom_nav_bar.dart';
 
 class AppRouter {
@@ -17,7 +19,6 @@ class AppRouter {
       initialLocation: '/',
 
       routes: [
-       
         GoRoute(
           path: '/copyTrading',
           name: 'copyTrading',
@@ -65,7 +66,30 @@ class AppRouter {
           path: '/user-copy-trading-dashboard',
           name: 'userCopyTradingDashboard',
           builder: (context, state) {
-            return const UserCopyTradingPage();
+            return const UserCopyTradingDashboardPage();
+          },
+        ),
+        GoRoute(
+          path: '/confirm-transaction',
+          name: 'confirmTransaction',
+          builder: (context, state) {
+            final String amount = state.extra as String;
+            return ConfirmTransactionScreen(amount: amount);
+          },
+        ),
+        GoRoute(
+          path: '/pin-confirmation',
+          name: 'pinConfirmation',
+          builder: (context, state) {
+            return PinConfirmationScreen();
+          },
+        ),
+
+        GoRoute(
+          path: '/transaction-success',
+          name: 'transactionSuccess',
+          builder: (context, state) {
+            return SuccessScreen();
           },
         ),
 
@@ -74,7 +98,7 @@ class AppRouter {
           builder: (context, state, child) => Main(),
           routes: [
             GoRoute(
-              path: '/', 
+              path: '/',
               name: 'main',
               pageBuilder: (context, state) =>
                   const NoTransitionPage(child: CircularProgressIndicator()),
