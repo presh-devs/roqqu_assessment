@@ -63,22 +63,26 @@ class CopyTradingDashboard extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
-            const Row(
+            Row(
               children: [
                 CopyTradingDashboardCard(
                   title: 'My dashboard',
                   description: 'View trades',
-                  gradientColors: [
+                  gradientColors: const [
                     Color(0xFFABE2F3),
                     Color(0xFFBDE4E5),
                     Color(0xFFEBE9D0),
                   ],
+                  onTap: () => context.push('/user-copy-trading-dashboard'),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 CopyTradingDashboardCard(
                   title: 'Become a PRO trader',
                   description: 'Apply Now',
-                  gradientColors: [
+                  onTap: () {
+                    
+                  },
+                  gradientColors: const [
                     Color(0xFFC0CFFE),
                     Color(0xFFF3DFF4),
                     Color(0xFFF9D8E5),

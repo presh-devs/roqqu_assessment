@@ -7,6 +7,7 @@ import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_t
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/enter_amount_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/success_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/trading_details.dart';
+import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_copy_trading_page.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/bottom_nav_bar.dart';
 
 class AppRouter {
@@ -56,6 +57,13 @@ class AppRouter {
           name: 'tradeSuccess',
           builder: (context, state) {
             return const SuccessScreen();
+          },
+        ),
+        GoRoute(
+          path: '/user-copy-trading-dashboard',
+          name: 'userCopyTradingDashboard',
+          builder: (context, state) {
+            return const UserCopyTradingPage();
           },
         ),
 

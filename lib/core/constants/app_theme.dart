@@ -81,7 +81,7 @@ class AppTheme {
           height: 18 / 12, 
           letterSpacing: 0,
         ),
-      ),
+      )
     );
   }
 }
