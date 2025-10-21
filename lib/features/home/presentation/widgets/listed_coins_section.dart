@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/home/data/datasources/binance_websocket_datasource.dart';
+import 'package:roqqu_assessment/features/home/data/models/coin_config.dart';
 import 'package:roqqu_assessment/features/home/data/models/ticker_model.dart';
 import 'package:roqqu_assessment/features/home/data/repositories/price_repository_impl.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/coin_tile.dart';
@@ -15,22 +17,20 @@ class ListedCoinsSection extends StatefulWidget {
 class _ListedCoinsSectionState extends State<ListedCoinsSection> {
   late final PriceRepositoryImpl _priceRepository;
   
-  // Store the latest ticker data for each symbol
   final Map<String, TickerModel> _tickerData = {};
-  
-  // Coin configurations
+ 
   final List<CoinConfig> _coins = [
     CoinConfig(
       symbol: 'BTCUSDT',
       name: 'Bitcoin',
       ticker: 'BTC',
-      iconUrl: 'https://seeklogo.com/images/B/bitcoin-logo-D193D7D737-seeklogo.com.png',
+      iconUrl: Assets.btcIcon,
     ),
     CoinConfig(
       symbol: 'ETHUSDT',
       name: 'Ethereum',
       ticker: 'ETH',
-      iconUrl: 'https://seeklogo.com/images/E/ethereum-logo-EC6CDBA45B-seeklogo.com.png',
+      iconUrl: Assets.ethIcon,
     ),
   ];
 
@@ -44,10 +44,10 @@ class _ListedCoinsSectionState extends State<ListedCoinsSection> {
     final dataSource = BinanceWebSocketDataSource();
     _priceRepository = PriceRepositoryImpl(dataSource);
     
-    // Get list of symbols to subscribe to
+    
     final symbols = _coins.map((c) => c.symbol).toList();
     
-    // Listen to the price stream
+
     _priceRepository.getPriceStream(symbols).listen(
       (ticker) {
         if (mounted) {
@@ -86,7 +86,7 @@ class _ListedCoinsSectionState extends State<ListedCoinsSection> {
               ),
               TextButton(
                 onPressed: () {
-                  // Navigate to see all coins page
+                 
                 },
                 child: const Text(
                   'See all',
@@ -121,18 +121,4 @@ class _ListedCoinsSectionState extends State<ListedCoinsSection> {
       ),
     );
   }
-}
-
-class CoinConfig {
-  final String symbol;
-  final String name;
-  final String ticker;
-  final String iconUrl;
-
-  CoinConfig({
-    required this.symbol,
-    required this.name,
-    required this.ticker,
-    required this.iconUrl,
-  });
 }

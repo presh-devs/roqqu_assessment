@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_detail_item.dart';
 
 class UserCopyTradingTradeCard extends StatelessWidget {
@@ -19,15 +21,11 @@ class UserCopyTradingTradeCard extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Icon(
-                    Icons.currency_bitcoin,
-                    color: Colors.white,
-                    size: 16,
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  child: SvgPicture.asset(
+                    Assets.btcIcon,
+                    width: 24,
+                    height: 24,
                   ),
                 ),
                 const SizedBox(width: 12),

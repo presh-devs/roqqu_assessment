@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trade_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_detail_item.dart';
@@ -93,11 +95,16 @@ class TradeCardWidget extends ConsumerWidget {
     );
   }
 }
+
 class ProTraderTradeCardWidget extends ConsumerWidget {
   final TradeModel trade;
   final bool? isActive;
 
-  const ProTraderTradeCardWidget({super.key, required this.trade, this.isActive });
+  const ProTraderTradeCardWidget({
+    super.key,
+    required this.trade,
+    this.isActive,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -120,15 +127,11 @@ class ProTraderTradeCardWidget extends ConsumerWidget {
             child: Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Icon(
-                    Icons.currency_bitcoin,
-                    color: Colors.white,
-                    size: 16,
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  child: SvgPicture.asset(
+                    Assets.btcIcon,
+                    width: 24,
+                    height: 24,
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -164,7 +167,6 @@ class ProTraderTradeCardWidget extends ConsumerWidget {
 
           const SizedBox(height: 16),
 
-          
           TradeDetailItem(
             label: 'Entry price',
             value: '${trade.entryPrice.toStringAsFixed(4)} USDT',
@@ -174,17 +176,22 @@ class ProTraderTradeCardWidget extends ConsumerWidget {
             value: '${currentPrice.toStringAsFixed(4)} USDT',
           ),
           TradeDetailItem(label: 'Copiers', value: trade.copiers.toString()),
-          TradeDetailItem(label: 'Copiers amount', value: trade.copiersAmount.toString()),
+          TradeDetailItem(
+            label: 'Copiers amount',
+            value: trade.copiersAmount.toString(),
+          ),
           TradeDetailItem(
             label: 'Entry time',
             value:
                 '${trade.entryTime.hour.toString().padLeft(2, '0')}:${trade.entryTime.minute.toString().padLeft(2, '0')} ${trade.entryTime.hour >= 12 ? 'PM' : 'AM'}',
           ),
-      isActive == false?    TradeDetailItem(
-            label: 'Exit time',
-            value:
-                '${trade.exitTime?.hour.toString().padLeft(2, '0')}:${trade.exitTime?.minute.toString().padLeft(2, '0')} ${trade.exitTime!.hour >= 12 ? 'PM' : 'AM'}',
-          ): SizedBox.shrink(),
+          isActive == false
+              ? TradeDetailItem(
+                  label: 'Exit time',
+                  value:
+                      '${trade.exitTime?.hour.toString().padLeft(2, '0')}:${trade.exitTime?.minute.toString().padLeft(2, '0')} ${trade.exitTime!.hour >= 12 ? 'PM' : 'AM'}',
+                )
+              : SizedBox.shrink(),
         ],
       ),
     );

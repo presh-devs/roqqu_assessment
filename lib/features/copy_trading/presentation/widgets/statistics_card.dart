@@ -38,7 +38,15 @@ class StatisticsCardWidget extends StatelessWidget {
               Positioned(
                 right: 0,
                 bottom: 0,
-                child: SvgPicture.asset(Assets.forwardArrow),
+                child: Container(
+                  width: 15,
+                  height: 15,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF262932),
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Color(0xFF20252B), width: 2),
+                  ),
+                  child: SvgPicture.asset(Assets.forwardArrow, )),
               ),
             ],
           ),

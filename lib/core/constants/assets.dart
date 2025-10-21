@@ -31,6 +31,9 @@ class Assets {
   static final String upTrendIcon = 'assets/icons/trending-down.svg';
   static final String moreIcon = 'assets/icons/more.svg';
   static final String btcIcon = 'assets/icons/bitcoin.svg';
+  static final String ethIcon = 'assets/icons/ethereum.svg';
+  static final String avatar= 'assets/icons/Avatar.svg';
+  static final String avatarPng= 'assets/icons/Avatar (3).png';
 
   // Illustrations
   static final String copyProTraders1 = 'assets/illustrations/copy_pro_traders_1.svg';

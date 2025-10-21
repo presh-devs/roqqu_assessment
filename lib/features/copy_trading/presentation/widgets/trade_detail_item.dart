@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 
 class TradeDetailItem extends StatelessWidget {
   const TradeDetailItem({
@@ -20,25 +22,7 @@ class TradeDetailItem extends StatelessWidget {
           Row(
             children: [
               if (label == 'PRO trader')
-                Container(
-                  width: 20,
-                  height: 20,
-                  margin: const EdgeInsets.only(right: 8),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'B',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+                ...[Image.asset(Assets.avatarPng, width: 16, height: 16), const SizedBox(width: 6)],
               Text(
                 value,
                 style: const TextStyle(

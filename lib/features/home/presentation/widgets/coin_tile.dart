@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
 
@@ -34,7 +35,7 @@ class CoinTile extends StatelessWidget {
       ),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
-        leading: Image.network(
+        leading: SvgPicture.asset(
           iconUrl,
           width: 40,
           height: 40,
