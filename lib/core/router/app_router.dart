@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/confirm_transaction_screen.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_dashboard.dart';

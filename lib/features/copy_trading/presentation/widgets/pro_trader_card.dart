@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
-import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/sparkline_painter.dart';
 
 class ProTraderCard extends StatelessWidget {

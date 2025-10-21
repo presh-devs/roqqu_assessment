@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
-import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/all_trades.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copiers.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_statistics_tab.dart';

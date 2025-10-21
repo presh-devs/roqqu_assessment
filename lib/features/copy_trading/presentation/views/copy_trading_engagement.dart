@@ -5,7 +5,7 @@ import 'package:riverpod/legacy.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/risk_profile_card.dart';
 
-final selectedRiskProfileProvider = StateProvider<int?>((ref) => null);
+final selectedRiskProfileProvider = StateProvider.autoDispose<int?>((ref) => null);
 
 class CopyTradingEngagementScreen extends ConsumerWidget {
   const CopyTradingEngagementScreen({super.key});

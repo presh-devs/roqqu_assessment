@@ -19,7 +19,6 @@ class RiskProfileCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: const Color(0xFF1C2127),
           borderRadius: BorderRadius.circular(16),
@@ -30,10 +29,33 @@ class RiskProfileCard extends StatelessWidget {
             width: 1.5,
           ),
         ),
-        child: Row(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            isSelected
+                ? Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF85D1F0),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(18),
+                          topRight: Radius.circular(14),
+                        ),
+                        border: Border.all(color: Color(0xFF85D1F0)),
+                      ),
+                      child: Icon(Icons.check, color: Colors.white, size: 16),
+                    ),
+                  )
+                : SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 0,
+                left: 16,
+                right: 16,
+                bottom: 24,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,15 +76,6 @@ class RiskProfileCard extends StatelessWidget {
                 ],
               ),
             ),
-            if (isSelected)
-              const Padding(
-                padding: EdgeInsets.only(left: 16.0),
-                child: Icon(
-                  Icons.check_circle,
-                  color: Color(0xFF85D1F0),
-                  size: 24,
-                ),
-              ),
           ],
         ),
       ),

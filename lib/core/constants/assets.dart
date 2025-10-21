@@ -29,6 +29,8 @@ class Assets {
   static final String usFlag = 'assets/icons/US.svg';
   static final String notificationIconWithAlert = 'assets/icons/notification_with_bg.svg';
   static final String upTrendIcon = 'assets/icons/trending-down.svg';
+  static final String moreIcon = 'assets/icons/more.svg';
+  static final String btcIcon = 'assets/icons/bitcoin.svg';
 
   // Illustrations
   static final String copyProTraders1 = 'assets/illustrations/copy_pro_traders_1.svg';

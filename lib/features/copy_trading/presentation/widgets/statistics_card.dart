@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:roqqu_assessment/core/constants/assets.dart';
 
 class StatisticsCardWidget extends StatelessWidget {
   final String label;
@@ -23,16 +25,22 @@ class StatisticsCardWidget extends StatelessWidget {
 
       child: Row(
         children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.circular(8),
-              border: Border(
-                bottom: BorderSide(color: Color(0xFF262932), width: 1),
+          Stack(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF8931A),
+                  shape: BoxShape.circle,
+                ),
+                child: SvgPicture.asset(Assets.btcIcon, width: 24, height: 24),
               ),
-            ),
-            child: const Icon(Icons.bar_chart, color: Colors.white, size: 20),
+              Positioned(
+                right: 0,
+                bottom: 0,
+                child: SvgPicture.asset(Assets.forwardArrow),
+              ),
+            ],
           ),
           const SizedBox(width: 12),
           Expanded(

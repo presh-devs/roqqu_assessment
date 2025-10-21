@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
-import 'package:roqqu_assessment/features/copy_trading/domain/trader.dart';
+import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/copy_trading_dashboard_card.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/pro_trader_card.dart';
 

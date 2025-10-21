@@ -29,6 +29,9 @@ class HomeActionCard extends StatelessWidget {
         ),
         Container(
           // color: const Color(0xFF20252B),
+          width: 77,
+          height: 28,
+         
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(16),
@@ -36,14 +39,16 @@ class HomeActionCard extends StatelessWidget {
             ),
             border: Border.all(color: Color(0xFF262932)),
           ),
-        
-          child: TextButton(
-            onPressed: () {},
-            child: Text(
-              'See More',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Color(0xFF85D1F0),
-                fontWeight: FontWeight.w500,
+
+          child: Center(
+            child: GestureDetector(
+              onTap: () {},
+              child: Text(
+                'See More',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Color(0xFF85D1F0),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

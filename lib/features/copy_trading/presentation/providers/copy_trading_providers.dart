@@ -1,14 +1,14 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod/legacy.dart';
-import 'package:roqqu_assessment/features/copy_trading/data/datasources/binance_websocket_datasource.dart';
+import 'package:roqqu_assessment/features/home/data/datasources/binance_websocket_datasource.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/copier_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/statistics.dart';
-import 'package:roqqu_assessment/features/copy_trading/data/models/ticker_model.dart';
+import 'package:roqqu_assessment/features/home/data/models/ticker_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trade_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trader_model.dart';
-import 'package:roqqu_assessment/features/copy_trading/data/repositories/price_repository_impl.dart';
-import 'package:roqqu_assessment/features/copy_trading/domain/repositories/price_repository.dart';
+import 'package:roqqu_assessment/features/home/data/repositories/price_repository_impl.dart';
+import 'package:roqqu_assessment/features/home/domain/repositories/price_repository.dart';
 
 final binanceWebSocketDataSourceProvider = Provider<BinanceWebSocketDataSource>(
   (ref) {

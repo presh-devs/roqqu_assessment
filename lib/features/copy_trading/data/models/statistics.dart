@@ -1,4 +1,4 @@
-import 'package:roqqu_assessment/features/copy_trading/data/models/ticker_model.dart';
+import 'package:roqqu_assessment/features/home/data/models/ticker_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trade_model.dart';
 
 class StatisticsModel {

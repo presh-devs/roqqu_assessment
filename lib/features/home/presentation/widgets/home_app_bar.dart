@@ -9,17 +9,35 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40.0, left: 16.0, right: 16.0, bottom: 16.0),
+      padding: const EdgeInsets.only(
+        top: 60.0,
+        left: 16.0,
+        right: 16.0,
+        bottom: 16.0,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Text('Crypto', style: AppTheme.darkTheme.textTheme.titleMedium),
-              const Icon(Icons.keyboard_arrow_down, color: Colors.black),
-            ],
+          Container(
+            width: 108,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12.0,
+              vertical: 4.0,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 8,
+              children: [
+                Text('Crypto', style: AppTheme.darkTheme.textTheme.titleMedium),
+                const Icon(Icons.keyboard_arrow_down, color: Colors.black),
+              ],
+            ),
           ),
-      
+
           Row(
             children: [
               IconButton(
@@ -27,7 +45,11 @@ class HomeAppBar extends StatelessWidget {
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset(Assets.headphones, width: 24, height: 24),
+                icon: SvgPicture.asset(
+                  Assets.headphones,
+                  width: 24,
+                  height: 24,
+                ),
                 onPressed: () {},
               ),
               IconButton(
@@ -38,12 +60,23 @@ class HomeAppBar extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 16.0),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12.0,
+                  vertical: 4.0,
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0xFF767680).withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 child: Row(
+                  spacing: 4,
                   children: [
                     SvgPicture.asset(Assets.flagIcon, width: 24, height: 24),
-                    const Icon(Icons.keyboard_arrow_down, color: Colors.black),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.black,
+                    ),
                   ],
                 ),
               ),

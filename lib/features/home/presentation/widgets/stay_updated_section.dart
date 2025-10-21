@@ -88,39 +88,42 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
               ),
             ),
             const SizedBox(height: 8),
-            Center(
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Color(0xFF20252B),
-                    child: SvgPicture.asset(Assets.notificationIconWithAlert),
-                  ),
-                  const SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Delisting coins',
-                            style: AppTheme.darkTheme.textTheme.labelLarge?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric( horizontal: 8.0),
+              child: Center(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Color(0xFF20252B),
+                      child: SvgPicture.asset(Assets.notificationIconWithAlert),
+                    ),
+                    const SizedBox(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Delisting coins',
+                              style: AppTheme.darkTheme.textTheme.labelLarge?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 8),
-                        ],
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'View the list of coins we are delisting',
-                        style: AppTheme.darkTheme.textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-         
-                ],
+                            const SizedBox(width: 8),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'View the list of coins we are delisting',
+                          style: AppTheme.darkTheme.textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                       
+                  ],
+                ),
               ),
             ),
           ],
