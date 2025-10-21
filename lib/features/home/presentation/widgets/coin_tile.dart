@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class CoinTile extends StatelessWidget {
   const CoinTile({
@@ -30,7 +31,7 @@ class CoinTile extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Color(0xFF262932), width: 1),
+          bottom: BorderSide(color: Color(borderColor), width: 1),
         ),
       ),
       child: ListTile(
@@ -65,7 +66,7 @@ class CoinTile extends StatelessWidget {
                       width: 80,
                       height: 16,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF262932),
+                        color: const Color(borderColor),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
@@ -74,7 +75,7 @@ class CoinTile extends StatelessWidget {
                       width: 50,
                       height: 14,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF262932),
+                        color: const Color(borderColor),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),

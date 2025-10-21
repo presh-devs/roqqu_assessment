@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_chart_tab.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_my_traders_tab.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/user_dashboard/user_copy_trading_current_trades_tab.dart';
@@ -30,8 +31,8 @@ class _UserCopyTradingDashboardPageState
                 Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF20252B),
-                    border: Border.all(color: const Color(0xFF262932)),
+                    color:  Color(backgroundColor),
+                    border: Border.all(color: const Color(borderColor)),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Column(
@@ -51,7 +52,7 @@ class _UserCopyTradingDashboardPageState
                         ),
                       ),
                       const SizedBox(height: 16),
-                      const Divider(height: 1, color: Color(0xFF262932)),
+                      const Divider(height: 1, color: Color(borderColor)),
                       const SizedBox(height: 16),
                       Row(
                         children: [
@@ -124,8 +125,8 @@ class _UserCopyTradingDashboardPageState
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF20252B),
-                      border: Border.all(color: const Color(0xFF262932)),
+                      color: const Color(backgroundColor),
+                      border: Border.all(color: const Color(borderColor)),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Column(
@@ -137,7 +138,7 @@ class _UserCopyTradingDashboardPageState
                               topRight: Radius.circular(16),
                             ),
                             color: Color(0XFF1C2127),
-                            border: Border.all(color: Color(0XFF262932)),
+                            border: Border.all(color: Color(borderColor)),
                           ),
 
                           child: TabBar(

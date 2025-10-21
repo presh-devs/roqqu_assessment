@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_card.dart';
 
@@ -19,8 +20,8 @@ class AllTradesTab extends ConsumerWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Color(0xFF20252B),
-              border: Border.all(color: Color(0xFF262932)),
+              color: Color(backgroundColor),
+              border: Border.all(color: Color(borderColor)),
             ),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -34,7 +35,7 @@ class AllTradesTab extends ConsumerWidget {
                         borderRadius: const BorderRadius.all(
                           Radius.circular(8),
                         ),
-                        border: Border.all(color: const Color(0xFF262932)),
+                        border: Border.all(color: const Color(borderColor)),
                       ),
                       child: TabBar(
                         indicator: BoxDecoration(
@@ -67,7 +68,7 @@ class AllTradesTab extends ConsumerWidget {
                       color: const Color(0xFF2A2F36),
                       borderRadius: BorderRadius.circular(6),
                       border: Border.all(
-                        color: const Color(0xFF262932),
+                        color: const Color(borderColor),
                         width: 1,
                       ),
                     ),

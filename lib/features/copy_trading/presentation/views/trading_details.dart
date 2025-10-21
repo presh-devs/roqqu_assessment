@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/all_trades.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copiers.dart';
@@ -129,7 +130,7 @@ class _TradingDetailsScreenState extends State<TradingDetailsScreen> {
                 SizedBox(height: 4),
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xFF262932)),
+                    border: Border.all(color: const Color(borderColor)),
                   ),
                   child: Column(
                     children: [

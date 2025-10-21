@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class PairChip extends StatelessWidget {
   const PairChip({
@@ -14,7 +15,7 @@ class PairChip extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF2A2F36),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF262932)),
+        border: Border.all(color: const Color(borderColor)),
       ),
       child: Text(
         pair,

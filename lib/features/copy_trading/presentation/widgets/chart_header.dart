@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class ChartHeader extends StatelessWidget {
   const ChartHeader({
@@ -25,7 +26,7 @@ class ChartHeader extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFF2A2F36),
             borderRadius: BorderRadius.circular(6),
-            border: Border.all(color: const Color(0xFF262932), width: 1),
+            border: Border.all(color: const Color(borderColor), width: 1),
           ),
           child: Row(
             children: [

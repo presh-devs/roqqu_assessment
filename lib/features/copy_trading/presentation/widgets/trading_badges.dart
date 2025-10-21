@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/roqqu_verification_badge.dart';
 
 class TradingBadges extends StatelessWidget {
@@ -13,13 +14,13 @@ class TradingBadges extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
+        color: const Color(backgroundColor),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16),
     
           topRight: Radius.circular(16),
         ),
-        border: Border.all(color: const Color(0xFF262932), width: 1.0),
+        border: Border.all(color: const Color(borderColor), width: 1.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

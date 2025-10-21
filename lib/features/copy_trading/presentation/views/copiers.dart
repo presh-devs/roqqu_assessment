@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide SearchBar;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/copier_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/copier_card.dart';
@@ -21,7 +22,7 @@ class CopiersTab extends ConsumerWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    decoration: BoxDecoration(color: const Color(0xFF20252B)),
+                    decoration: BoxDecoration(color: const Color(backgroundColor)),
                     child: const AppSearchBar(),
                   ),
                   _buildCopiersList(copiers),

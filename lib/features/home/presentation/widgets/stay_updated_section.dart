@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class StayUpdatedSection extends StatefulWidget {
@@ -63,9 +64,9 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
       child: Container(
       
         decoration: BoxDecoration(
-          color: Color(0xFF20252B),
+          color: Color(backgroundColor),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: const Color(0xFF262932)),
+          border: Border.all(color: const Color(borderColor)),
         ),
         child: Column(
           children: [
@@ -94,7 +95,7 @@ class _StayUpdatedSectionState extends State<StayUpdatedSection> {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: Color(0xFF20252B),
+                      backgroundColor: Color(backgroundColor),
                       child: SvgPicture.asset(Assets.notificationIconWithAlert),
                     ),
                     const SizedBox(width: 12),

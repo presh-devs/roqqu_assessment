@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class PinConfirmationScreen extends StatefulWidget {
   const PinConfirmationScreen({super.key});
@@ -73,8 +74,8 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: const Color(0xFF20252B),
-                  border: Border.all(color: Color(0xFF262932)),
+                  color: const Color(backgroundColor),
+                  border: Border.all(color: Color(borderColor)),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Row(
@@ -93,8 +94,8 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
                 width: 40,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: const Color(0xFF20252B),
-                  border: Border.all(color: Color(0xFF262932)),
+                  color: const Color(backgroundColor),
+                  border: Border.all(color: Color(borderColor)),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: SvgPicture.asset(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trader.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/sparkline_painter.dart';
 
@@ -22,15 +23,15 @@ class ProTraderCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xFF20252B),
+              color: const Color(backgroundColor),
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 topRight: Radius.circular(16),
               ),
               border: Border(
-                top: BorderSide(color: const Color(0xFF262932), width: 1.0),
-                right: BorderSide(color: const Color(0xFF262932), width: 1.0),
-                left: BorderSide(color: const Color(0xFF262932), width: 1.0),
+                top: BorderSide(color: const Color(borderColor), width: 1.0),
+                right: BorderSide(color: const Color(borderColor), width: 1.0),
+                left: BorderSide(color: const Color(borderColor), width: 1.0),
               ),
             ),
             child: Column(
@@ -113,7 +114,7 @@ class ProTraderCard extends StatelessWidget {
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: const Color(0xFF1C2127),
-                        side: const BorderSide(color: Color(0xFF262932)),
+                        side: const BorderSide(color: Color(borderColor)),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -128,7 +129,7 @@ class ProTraderCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
-                Divider(color: Color(0xFF262932), height: 32),
+                Divider(color: Color(borderColor), height: 32),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -189,7 +190,7 @@ class ProTraderCard extends StatelessWidget {
                 bottomRight: Radius.circular(16),
               ),
               color: const Color(0xFF1C2127),
-              border: Border.all(color: const Color(0xFF262932)),
+              border: Border.all(color: const Color(borderColor)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

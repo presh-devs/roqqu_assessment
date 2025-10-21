@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 
 class BottomBar extends StatelessWidget {
@@ -12,9 +13,9 @@ class BottomBar extends StatelessWidget {
       height: 112,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
+        color: const Color(backgroundColor),
         border: Border(
-          top: BorderSide(color: const Color(0xFF262932), width: 1),
+          top: BorderSide(color: const Color(borderColor), width: 1),
         ),
       ),
       child: Column(

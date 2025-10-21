@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/chart_header.dart';
 
 class PNLChart extends StatelessWidget {
@@ -12,8 +13,8 @@ class PNLChart extends StatelessWidget {
     return Container(
      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-         color: const Color(0xFF20252B),
-        border: Border.all(color: const Color(0xFF262932), width: 1),
+         color: const Color(backgroundColor),
+        border: Border.all(color: const Color(borderColor), width: 1),
       
       ),
       child: Column(

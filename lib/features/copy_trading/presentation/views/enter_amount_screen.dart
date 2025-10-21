@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 
 class EnterAmountScreen extends StatefulWidget {
@@ -62,9 +63,9 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
             margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: const Color(0xFF20252B),
+              color: const Color(backgroundColor),
               borderRadius: BorderRadius.circular(100),
-              border: Border.all(color: const Color(0xFF262932)),
+              border: Border.all(color: const Color(borderColor)),
             ),
             child: Row(
               children: [
@@ -117,9 +118,9 @@ class _EnterAmountScreenState extends State<EnterAmountScreen> {
                 right: 16,
               ),
               decoration: BoxDecoration(
-                color: const Color(0xFF20252B),
+                color: const Color(backgroundColor),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: const Color(0xFF262932)),
+                border: Border.all(color: const Color(borderColor)),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

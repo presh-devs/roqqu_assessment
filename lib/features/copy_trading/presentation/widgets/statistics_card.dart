@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class StatisticsCardWidget extends StatelessWidget {
   final String label;
@@ -19,8 +20,8 @@ class StatisticsCardWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
-        border: Border.all(color: const Color(0xFF262932)),
+        color: const Color(backgroundColor),
+        border: Border.all(color: const Color(borderColor)),
       ),
 
       child: Row(
@@ -42,9 +43,9 @@ class StatisticsCardWidget extends StatelessWidget {
                   width: 15,
                   height: 15,
                   decoration: BoxDecoration(
-                    color: Color(0xFF262932),
+                    color: Color(borderColor),
                     shape: BoxShape.circle,
-                    border: Border.all(color: Color(0xFF20252B), width: 2),
+                    border: Border.all(color: Color(backgroundColor), width: 2),
                   ),
                   child: SvgPicture.asset(Assets.forwardArrow, )),
               ),

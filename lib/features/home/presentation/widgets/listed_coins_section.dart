@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/home/data/datasources/binance_websocket_datasource.dart';
 import 'package:roqqu_assessment/features/home/data/models/coin_config.dart';
 import 'package:roqqu_assessment/features/home/data/models/ticker_model.dart';
@@ -98,7 +99,7 @@ class _ListedCoinsSectionState extends State<ListedCoinsSection> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             decoration: BoxDecoration(
-              color: Color(0xFF20252B),
+              color: Color(backgroundColor),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(

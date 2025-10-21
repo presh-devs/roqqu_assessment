@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/risks_bottom_sheet.dart';
 
 class ImportantMessageSheet extends StatefulWidget {
@@ -25,7 +26,7 @@ class _ImportantMessageSheetState extends State<ImportantMessageSheet> {
       
         decoration: BoxDecoration(
           color: const Color(0xFF1C2127),
-          border: Border.all(color: const Color(0xFF262932)),
+          border: Border.all(color: const Color(borderColor)),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(24),
             topRight: Radius.circular(24),

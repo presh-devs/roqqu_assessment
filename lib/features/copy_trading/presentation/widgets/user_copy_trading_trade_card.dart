@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_detail_item.dart';
 
 class UserCopyTradingTradeCard extends StatelessWidget {
@@ -10,7 +11,7 @@ class UserCopyTradingTradeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
+        color: const Color(backgroundColor),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

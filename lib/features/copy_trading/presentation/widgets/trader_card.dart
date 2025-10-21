@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trader_model.dart';
 
 class TraderCardWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class TraderCardWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
+        color: const Color(backgroundColor),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

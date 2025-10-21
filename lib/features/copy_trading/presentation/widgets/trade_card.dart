@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/trade_model.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/trade_detail_item.dart';
@@ -23,7 +24,7 @@ class TradeCardWidget extends ConsumerWidget {
     final roiColor = roi >= 0 ? Colors.green : Colors.red;
 
     return Container(
-      decoration: BoxDecoration(color: const Color(0xFF20252B)),
+      decoration: BoxDecoration(color: const Color(backgroundColor)),
       child: Column(
         children: [
           Container(
@@ -118,7 +119,7 @@ class ProTraderTradeCardWidget extends ConsumerWidget {
     final roiColor = roi >= 0 ? Colors.green : Colors.red;
 
     return Container(
-      decoration: BoxDecoration(color: const Color(0xFF20252B)),
+      decoration: BoxDecoration(color: const Color(backgroundColor)),
       child: Column(
         children: [
           Container(

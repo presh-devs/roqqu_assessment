@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:roqqu_assessment/core/constants/app_theme.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/more_list_item.dart';
 
 class MoreForYou extends StatelessWidget {
@@ -13,7 +14,7 @@ class MoreForYou extends StatelessWidget {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
       child: Dialog(
-        backgroundColor: const Color(0xFF20252B),
+        backgroundColor: const Color(backgroundColor),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -33,9 +34,9 @@ class MoreForYou extends StatelessWidget {
               SizedBox(height: 16),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF20252B),
+                  color: Color(backgroundColor),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Color(0xFF262932)),
+                  border: Border.all(color: Color(borderColor)),
                 ),
                 child: Column(
                   children: [
@@ -59,9 +60,9 @@ class MoreForYou extends StatelessWidget {
               SizedBox(height: 16),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF20252B),
+                  color: Color(backgroundColor),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Color(0xFF262932)),
+                  border: Border.all(color: Color(borderColor)),
                 ),
                 child: Column(
                   children: [

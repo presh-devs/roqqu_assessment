@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class MoreListItem extends StatelessWidget {
   const MoreListItem({super.key, required this.title, this.isNew});
@@ -11,7 +12,7 @@ class MoreListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0xFF262932), width: 1)),
+        border: Border(bottom: BorderSide(color: Color(borderColor), width: 1)),
       ),
       child: ListTile(
         leading: Container(

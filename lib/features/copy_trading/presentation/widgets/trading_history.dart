@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/chart_header.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/user_copy_trading_trade_card.dart';
 
@@ -9,8 +10,8 @@ class TradingHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
-        border: Border.all(color: const Color(0xFF262932)),
+        color: const Color(backgroundColor),
+        border: Border.all(color: const Color(borderColor)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 
 class RiskProfileCard extends StatelessWidget {
   final String title;
@@ -25,7 +26,7 @@ class RiskProfileCard extends StatelessWidget {
           border: Border.all(
             color: isSelected
                 ? const Color(0xFF85D1F0)
-                : const Color(0xFF262932),
+                : const Color(borderColor),
             width: 1.5,
           ),
         ),

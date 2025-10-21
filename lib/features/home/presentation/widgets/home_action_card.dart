@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/home/presentation/widgets/home_action_item.dart';
 
 class HomeActionCard extends StatelessWidget {
@@ -11,9 +12,9 @@ class HomeActionCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: const Color(0xFF20252B),
+            color: const Color(backgroundColor),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Color(0xFF262932)),
+            border: Border.all(color: Color(borderColor)),
           ),
           margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -28,7 +29,7 @@ class HomeActionCard extends StatelessWidget {
           ),
         ),
         Container(
-          // color: const Color(0xFF20252B),
+          // color: const Color(backgroundColor),
           width: 77,
           height: 28,
          
@@ -37,7 +38,7 @@ class HomeActionCard extends StatelessWidget {
               bottomLeft: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
-            border: Border.all(color: Color(0xFF262932)),
+            border: Border.all(color: Color(borderColor)),
           ),
 
           child: Center(

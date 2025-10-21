@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/views/copy_trading_onboarding_page.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
@@ -80,7 +81,7 @@ class _CopyTradingScreenState extends ConsumerState<CopyTradingScreen> {
                         decoration: BoxDecoration(
                           color: _currentPage >= index
                               ? const Color(0xFF85D1F0)
-                              : const Color(0xFF262932),
+                              : const Color(borderColor),
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/history/presentation/views/history_page.dart';
 import 'package:roqqu_assessment/features/home/presentation/providers/page_provider.dart';
 import 'package:roqqu_assessment/features/home/presentation/views/home_page.dart';
@@ -38,7 +39,7 @@ class Main extends ConsumerWidget {
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        backgroundColor: Color(0xFF20252B),
+        backgroundColor: Color(backgroundColor),
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
           if (index == 2) {

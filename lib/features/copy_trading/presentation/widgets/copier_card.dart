@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/data/models/copier_model.dart';
 
 class CopierCard extends StatelessWidget {
@@ -15,7 +16,7 @@ class CopierCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF20252B),
+        color: const Color(backgroundColor),
         
       ),
       child: Column(

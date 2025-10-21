@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/providers/copy_trading_providers.dart';
 
 class AppSearchBar extends ConsumerWidget {
@@ -21,7 +22,7 @@ class AppSearchBar extends ConsumerWidget {
           fillColor: const Color(0xFF2A2F36),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: Color(0xFF262932), width: 1),
+            borderSide: BorderSide(color: Color(borderColor), width: 1),
           ),
         ),
       ),

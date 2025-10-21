@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqqu_assessment/core/constants/assets.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/features/copy_trading/presentation/widgets/bottom_bar.dart';
 
 class ConfirmTransactionScreen extends StatelessWidget {
@@ -28,8 +29,8 @@ class ConfirmTransactionScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 16, bottom: 8),
               decoration: BoxDecoration(
-                color: const Color(0xFF20252B),
-                border: Border.all(color: const Color(0xFF262932)),
+                color: const Color(backgroundColor),
+                border: Border.all(color: const Color(borderColor)),
               
                 borderRadius: const BorderRadius.all(
                   Radius.circular(16),

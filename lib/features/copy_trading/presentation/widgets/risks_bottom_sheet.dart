@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:roqqu_assessment/core/constants/colors.dart';
 import 'package:roqqu_assessment/core/widgets/app_button.dart';
 
 class RisksBottomSheet extends StatefulWidget {
@@ -109,8 +110,8 @@ class _RisksBottomSheetState extends State<RisksBottomSheet> {
                   final isExpanded = _expandedIndex == index;
                   return Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF20252B),
-                      border: Border.all(color: const Color(0xFF262932)),
+                      color: const Color(backgroundColor),
+                      border: Border.all(color: const Color(borderColor)),
                     ),
                     child: Theme(
                       data: Theme.of(
